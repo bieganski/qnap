@@ -4,8 +4,7 @@ import re
 import requests
 import xml.etree.ElementTree as ET
 
-from get_sid import ezEncode
-from utils import jsonprint
+from .get_sid import ezEncode
 
 class Qnap():
     def __init__(self, host, user, passwd, port='8080'):
@@ -102,7 +101,7 @@ class Qnap():
         return response_json
 
     def is_response_binary(self, response):
-        return 'text/plain' not in response.headers['content-type']
+        return 'content-type' not in response.headers or 'text/plain' not in response.headers['content-type']
 
     def add_param(self, base_url, param, value):
         ret_value = base_url

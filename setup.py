@@ -12,7 +12,7 @@ def requires(filename):
 base_requires = requires("requirements.txt")
 
 setup(
-    name="ikva_utils",
+    name="qnap",
     version="0.1",
     description="TODO",
     author="TODO",
