@@ -9,7 +9,7 @@ def requires(filename):
     with open(join(dirname(abspath(__file__)), filename), "r") as f:
         return [line for line in f.read().splitlines() if not line.startswith("--")]
 
-base_requires = requires("requirements.txt")
+base_requires = requires("qnap/requirements.txt")
 
 setup(
     name="qnap",
